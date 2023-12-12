@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Fluent Chatbot</title>
+</head>
+
+<body>
+    <div class="card">
+        <div id="header">
+            <img src="{{ url_for('static', filename='header_filkom.png') }}" alt="Logo Filkom">
+        </div>
+        <main class="card__content">
+            <div id="message-section">
+                <!-- Menampilkan respons chatbot pertama kali -->
+                <div class="message bot-message">
+                    <img src="{{ url_for('static', filename='bot_icon.png') }}" alt="Bot Icon" class="profile-icon-bot">
+                    <span>{{ bot_response }}</span>
+                </div>
+                <!-- Chat messages will be dynamically added here -->
+            </div>
+            <div id="input-section">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()" id="sendButton" class="input-section__button">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
